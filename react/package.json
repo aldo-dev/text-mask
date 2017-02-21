@@ -1,7 +1,7 @@
 {
-  "name": "react-text-mask",
-  "version": "5.0.2",
-  "description": "React input component that accepts mask pattern",
+  "name": "mhazy-react-text-mask",
+  "version": "1.0.0",
+  "description": "React input component that accepts mask pattern (BUG FIX EDITION)",
   "main": "dist/reactTextMask.js",
   "author": "M.K. Safi <msafi@msafi.com>",
   "license": "Unlicense",

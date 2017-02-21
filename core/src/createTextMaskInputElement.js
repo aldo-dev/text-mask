@@ -176,11 +176,9 @@ export default function createTextMaskInputElement(config) {
 
 function safeSetSelection(element, selectionPosition) {
   if (document.activeElement === element) {
-    if (isAndroid) {
-      defer(() => element.setSelectionRange(selectionPosition, selectionPosition, strNone), 0)
-    } else {
+    setTimeout(() => {
       element.setSelectionRange(selectionPosition, selectionPosition, strNone)
-    }
+    }, 0);
   }
 }
 
