@@ -1,5 +1,12 @@
 # React Input Mask
 
+## DO NOT USE!
+This is an unmaintained fork to "fix" an issue with caret positioning on Android.
+
+https://github.com/text-mask/text-mask/issues/300
+
+This will be deleted when the main library is "fixed", so, don't rely on it being here unless you're the person that put it here.
+
 ## Getting started
 
 First, install it.
