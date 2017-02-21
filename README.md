@@ -1,7 +1,13 @@
-# [![Text Mask](assets/logo.png)](https://github.com/text-mask/text-mask/#readme)
+# Text Mask (UNOFFICIAL FORK!)
 
-[![Build Status](https://travis-ci.org/text-mask/text-mask.svg?branch=master)](https://travis-ci.org/text-mask/text-mask)
+## DO NOT USE!
+This is an unmaintained fork to "fix" an issue with caret positioning on Android.
 
+https://github.com/text-mask/text-mask/issues/300
+
+This will be deleted when the main library is "fixed", so, don't rely on it being here unless you're the person that put it here.
+
+## Text Mask
 Text Mask is an input mask library. It can create input masks for phone, date, currency, zip code, percentage, email, 
 and literally anything!
 
