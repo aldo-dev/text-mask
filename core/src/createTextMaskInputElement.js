@@ -7,7 +7,7 @@ const strFunction = 'function'
 const emptyString = ''
 const strNone = 'none'
 const strObject = 'object'
-const isAndroid = /Android/i.test(typeof navigator !== 'undefined' && navigator.userAgent)
+const isAndroid = typeof navigator !== 'undefined' && /(android)/i.test(navigator.userAgent)
 
 export default function createTextMaskInputElement({
   inputElement,
