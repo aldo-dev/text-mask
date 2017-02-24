@@ -8,6 +8,8 @@ const emptyString = ''
 const strNone = 'none'
 const strObject = 'object'
 
+const isAndroid = typeof navigator !== 'undefined' && /(android)/i.test(navigator.userAgent)
+
 export default function createTextMaskInputElement({
   inputElement,
   mask: providedMask,
@@ -165,9 +167,11 @@ export default function createTextMaskInputElement({
 
 function safeSetSelection(element, selectionPosition) {
   if (document.activeElement === element) {
-    setTimeout(() => {
+    if (isAndroid) {
+      setTimeout(() => element.setSelectionRange(selectionPosition, selectionPosition, strNone), 0)
+    } else {
       element.setSelectionRange(selectionPosition, selectionPosition, strNone)
-    }, 0);
+    }
   }
 }
 
