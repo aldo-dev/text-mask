@@ -7,6 +7,8 @@ https://github.com/text-mask/text-mask/issues/300
 
 This will be deleted when the main library is "fixed", so, don't rely on it being here unless you're the person that put it here.
 
+THIS PACKAGE IS OBSELETE - react-text-mask is now fixed.
+
 ## Text Mask
 Text Mask is an input mask library. It can create input masks for phone, date, currency, zip code, percentage, email, 
 and literally anything!
