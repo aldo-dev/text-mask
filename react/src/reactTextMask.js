@@ -20,7 +20,7 @@ export const MaskedInput = React.createClass({
 
   componentDidMount() {
     const {props, props: {value}} = this
-    this.textMaskInputElement = createTextMaskInputElement(this.inputElement, props)
+    this.textMaskInputElement = createTextMaskInputElement(this.inputElement, {...props})
     this.textMaskInputElement.update(value)
   },
 
