@@ -1,0 +1,96 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/Users/mark/.nvm/versions/node/v6.9.3/bin/node',
+1 verbose cli   '/Users/mark/.nvm/versions/node/v6.9.3/bin/npm',
+1 verbose cli   'publish',
+1 verbose cli   '--access',
+1 verbose cli   'public' ]
+2 info using npm@3.10.10
+3 info using node@v6.9.3
+4 verbose publish [ '.' ]
+5 silly cache add args [ '.', null ]
+6 verbose cache add spec .
+7 silly cache add parsed spec Result {
+7 silly cache add   raw: '.',
+7 silly cache add   scope: null,
+7 silly cache add   escapedName: null,
+7 silly cache add   name: null,
+7 silly cache add   rawSpec: '.',
+7 silly cache add   spec: '/Users/mark/Development/text-mask/react',
+7 silly cache add   type: 'directory' }
+8 verbose addLocalDirectory /Users/mark/.npm/mhazy-react-text-mask/2.2.5/package.tgz not in flight; packing
+9 verbose correctMkdir /Users/mark/.npm correctMkdir not in flight; initializing
+10 info lifecycle mhazy-react-text-mask@2.2.5~prepublish: mhazy-react-text-mask@2.2.5
+11 silly lifecycle mhazy-react-text-mask@2.2.5~prepublish: no script for prepublish, continuing
+12 verbose tar pack [ '/Users/mark/.npm/mhazy-react-text-mask/2.2.5/package.tgz',
+12 verbose tar pack   '/Users/mark/Development/text-mask/react' ]
+13 verbose tarball /Users/mark/.npm/mhazy-react-text-mask/2.2.5/package.tgz
+14 verbose folder /Users/mark/Development/text-mask/react
+15 verbose addLocalTarball adding from inside cache /Users/mark/.npm/mhazy-react-text-mask/2.2.5/package.tgz
+16 verbose correctMkdir /Users/mark/.npm correctMkdir not in flight; initializing
+17 silly cache afterAdd mhazy-react-text-mask@2.2.5
+18 verbose afterAdd /Users/mark/.npm/mhazy-react-text-mask/2.2.5/package/package.json not in flight; writing
+19 verbose correctMkdir /Users/mark/.npm correctMkdir not in flight; initializing
+20 verbose afterAdd /Users/mark/.npm/mhazy-react-text-mask/2.2.5/package/package.json written
+21 silly publish { name: 'mhazy-react-text-mask',
+21 silly publish   version: '2.2.5',
+21 silly publish   description: 'React input component that accepts mask pattern (BUG FIX EDITION)',
+21 silly publish   main: 'dist/reactTextMask.js',
+21 silly publish   author: { name: 'M.K. Safi', email: 'msafi@msafi.com' },
+21 silly publish   license: 'Unlicense',
+21 silly publish   bugs: { url: 'https://github.com/text-mask/text-mask/issues' },
+21 silly publish   repository:
+21 silly publish    { type: 'git',
+21 silly publish      url: 'git+https://github.com/text-mask/text-mask.git' },
+21 silly publish   homepage: 'https://github.com/text-mask/text-mask/tree/master/react/#readme',
+21 silly publish   peerDependencies: { react: '^0.14.0 || ^15.0.0' },
+21 silly publish   babel: { presets: [ 'es2015', 'react', 'stage-0' ] },
+21 silly publish   keywords:
+21 silly publish    [ 'react',
+21 silly publish      'react-component',
+21 silly publish      'text mask',
+21 silly publish      'input mask',
+21 silly publish      'string mask',
+21 silly publish      'input formatting',
+21 silly publish      'text formatting',
+21 silly publish      'string formatting' ],
+21 silly publish   readme: '# React Input Mask\n\n## Getting started\n\nFirst, install it.\n\n```bash\nnpm i react-text-mask --save\n```\n\nThen, require it and use it.\n\n```js\nvar React = require(\'react\')\nvar MaskedInput = require(\'react-text-mask\')\n\nvar MyComponent = React.createClass({\n  render() {\n    return (\n      <div>\n        <MaskedInput mask={[\'(\', /[1-9]/, /\\d/, /\\d/, \')\', \' \', /\\d/, /\\d/, /\\d/, \'-\', /\\d/, /\\d/, /\\d/, /\\d/]} />\n      </div>\n    )\n  }\n})\n```\n\n`<MaskedInput/>` is fully compatible with `<input/>` element. So, you can\npass to it CSS classes, a placeholder attribute, or whatever.\n\nFor example, the following works:\n\n```js\n<MaskedTextInput\n  mask={[\'(\', /[1-9]/, /\\d/, /\\d/, \')\', \' \', /\\d/, /\\d/, /\\d/, \'-\', /\\d/, /\\d/, /\\d/, /\\d/]}\n  className="form-control"\n  placeholder="Enter a phone number"\n  guide={false}\n  id="my-input-id"\n/>\n```\n\n## Documentation\n\nFor more information about the `props` that you can pass to the component, see\nthe [documentation here](https://github.com/text-mask/text-mask/blob/master/componentDocumentation.md#readme).\n\n## Example\n\nTo see an example of the code running, follow these steps:\n\n1. Clone the repo, `git clone git@github.com:text-mask/text-mask.git`\n1. `cd text-mask`\n1. `npm install`\n1. `npm run react:dev`\n1. Open [http://localhost:3000](http://localhost:3000)\n\nThe code of the example is in [`react/example`](https://github.com/text-mask/text-mask/tree/master/react/example).\n\n## Contributing\n\nWe would love some contributions! Check out [this document](https://github.com/text-mask/text-mask/blob/master/howToContribute.md#readme) to get started.\n',
+21 silly publish   readmeFilename: 'README.md',
+21 silly publish   _id: 'mhazy-react-text-mask@2.2.5',
+21 silly publish   scripts: {},
+21 silly publish   _shasum: '918910e8ed92c5891f271db1e7a20a4b7a5a9854',
+21 silly publish   _from: '.' }
+22 verbose getPublishConfig undefined
+23 silly mapToRegistry name mhazy-react-text-mask
+24 silly mapToRegistry using default registry
+25 silly mapToRegistry registry https://registry.yarnpkg.com/
+26 silly mapToRegistry data Result {
+26 silly mapToRegistry   raw: 'mhazy-react-text-mask',
+26 silly mapToRegistry   scope: null,
+26 silly mapToRegistry   escapedName: 'mhazy-react-text-mask',
+26 silly mapToRegistry   name: 'mhazy-react-text-mask',
+26 silly mapToRegistry   rawSpec: '',
+26 silly mapToRegistry   spec: 'latest',
+26 silly mapToRegistry   type: 'tag' }
+27 silly mapToRegistry uri https://registry.yarnpkg.com/mhazy-react-text-mask
+28 verbose publish registryBase https://registry.yarnpkg.com/
+29 silly publish uploading /Users/mark/.npm/mhazy-react-text-mask/2.2.5/package.tgz
+30 verbose stack Error: auth required for publishing
+30 verbose stack     at CachingRegistryClient.publish (/Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/node_modules/npm-registry-client/lib/publish.js:30:14)
+30 verbose stack     at /Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/lib/publish.js:138:14
+30 verbose stack     at mapToRegistry (/Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/lib/utils/map-to-registry.js:62:3)
+30 verbose stack     at publish_ (/Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/lib/publish.js:107:3)
+30 verbose stack     at Array.<anonymous> (/Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/node_modules/slide/lib/bind-actor.js:15:8)
+30 verbose stack     at LOOP (/Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/node_modules/slide/lib/chain.js:15:14)
+30 verbose stack     at LOOP (/Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/node_modules/slide/lib/chain.js:14:28)
+30 verbose stack     at chain (/Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/node_modules/slide/lib/chain.js:20:5)
+30 verbose stack     at /Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/lib/publish.js:73:5
+30 verbose stack     at RES (/Users/mark/.nvm/versions/node/v6.9.3/lib/node_modules/npm/node_modules/inflight/inflight.js:23:14)
+31 verbose cwd /Users/mark/Development/text-mask/react
+32 error Darwin 16.4.0
+33 error argv "/Users/mark/.nvm/versions/node/v6.9.3/bin/node" "/Users/mark/.nvm/versions/node/v6.9.3/bin/npm" "publish" "--access" "public"
+34 error node v6.9.3
+35 error npm  v3.10.10
+36 error code ENEEDAUTH
+37 error need auth auth required for publishing
+38 error need auth You need to authorize this machine using `npm adduser`
+39 verbose exit [ 1, true ]

@@ -1,4 +1,9 @@
 # React Input Mask
+## Don't Use This
+
+This is a fork that's used to fix incompatibilities and try out things.
+
+Don't use it if it's not yours, trust me!
 
 ## Getting started
 
