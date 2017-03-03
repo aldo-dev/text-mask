@@ -13,8 +13,14 @@ export default function createTextMaskInputElement(config) {
   // Anything that we will need to keep between `update` calls, we will store in this `state` object.
   const state = {previousConformedValue: emptyString}
 
+  let currentConfig = config;
   return {
     state,
+
+    // Called by framework components when they want to update the stored configuration
+    updateConfig(config) {
+      currentConfig = config;
+    },
 
     // `update` is called by framework components whenever they want to update the `value` of the input element.
     // The caller can send a `rawValue` to be conformed and set on the input element. However, the default use-case
@@ -26,7 +32,7 @@ export default function createTextMaskInputElement(config) {
       pipe,
       placeholderChar = defaultPlaceholderChar,
       keepCharPositions = false
-    } = config) {
+    } = currentConfig) {
       rawValue = rawValue || inputElement.value
 
       // If `rawValue` equals `state.previousConformedValue`, we don't need to change anything. So, we return.

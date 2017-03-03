@@ -26,7 +26,8 @@ export const MaskedInput = React.createClass({
   },
 
   componentDidUpdate() {
-    this.textMaskInputElement.update(this.props.value, {inputElement: this.inputElement, ...this.props})
+    this.textMaskInputElement.updateConfig({inputElement: this.inputElement, ...this.props})
+    this.textMaskInputElement.update(this.props.value);
   },
 
   render() {
@@ -51,7 +52,7 @@ export const MaskedInput = React.createClass({
   },
 
   onChange(event) {
-    this.textMaskInputElement.update(this.inputElement.value, {inputElement: this.inputElement, ...this.props});
+    this.textMaskInputElement.update()
 
     if (typeof this.props.onChange === 'function') {
       this.props.onChange(event)
