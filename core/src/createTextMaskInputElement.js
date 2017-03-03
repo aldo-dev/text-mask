@@ -9,30 +9,28 @@ const strNone = 'none'
 const strObject = 'object'
 const isAndroid = typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent)
 
-export default function createTextMaskInputElement(config) {
+export default function createTextMaskInputElement(inputElement, config) {
   // Anything that we will need to keep between `update` calls, we will store in this `state` object.
   const state = {previousConformedValue: emptyString}
-
-  let currentConfig = config;
+  let _config = config
   return {
     state,
 
     // Called by framework components when they want to update the stored configuration
     updateConfig(config) {
-      currentConfig = config;
+      _config = config
     },
 
     // `update` is called by framework components whenever they want to update the `value` of the input element.
     // The caller can send a `rawValue` to be conformed and set on the input element. However, the default use-case
     // is for this to be read from the `inputElement` directly.
     update(rawValue, {
-      inputElement,
       mask: providedMask,
       guide,
       pipe,
       placeholderChar = defaultPlaceholderChar,
       keepCharPositions = false
-    } = currentConfig) {
+    } = _config) {
       rawValue = rawValue || inputElement.value
 
       // If `rawValue` equals `state.previousConformedValue`, we don't need to change anything. So, we return.
