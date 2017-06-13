@@ -10,7 +10,7 @@ export const MaskedInput = React.createClass({
         mask: PropTypes.oneOfType([PropTypes.array, PropTypes.func]),
         pipe: PropTypes.func
       })
-    ]).isRequired,
+    ]),
     guide: PropTypes.bool,
     value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]),
     pipe: PropTypes.func,
