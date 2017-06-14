@@ -19,7 +19,7 @@ export default function createTextMaskInputElement({
   // Text Mask accepts masks that are a combination of a `mask` and a `pipe` that work together. If such a `mask` is
   // passed, we destructure it below, so the rest of the code can work normally as if a separate `mask` and a `pipe`
   // were passed.
-  if (typeof providedMask === strObject && providedMask.pipe !== undefined && providedMask.mask !== undefined) {
+  if (typeof providedMask === strObject && !!providedMask && providedMask.pipe !== undefined && providedMask.mask !== undefined) {
     pipe = providedMask.pipe
     providedMask = providedMask.mask
   }
@@ -48,6 +48,18 @@ export default function createTextMaskInputElement({
     // The caller can send a `rawValue` to be conformed and set on the input element. However, the default use-case
     // is for this to be read from the `inputElement` directly.
     update(rawValue = inputElement.value) {
+      // Custom code to quickly allow for piping even when a mask isn't provided
+      // This is a cheap hack to get what we need working
+      if (providedMask === false && pipe) {
+        const pipedResult = pipe(inputElement.value)
+        if (inputElement.value !== pipedResult) {
+          const carretPos = inputElement.selectionStart
+          inputElement.value = pipedResult // set the input value
+          safeSetSelection(inputElement, carretPos) // adjust caret position
+        }
+
+        return
+      }
       // In framework components that support reactivity, it's possible to turn off masking by passing
       // `false` for `mask` after initialization. See https://github.com/text-mask/text-mask/pull/359
       if (providedMask === false) { return }
