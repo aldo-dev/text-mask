@@ -176,7 +176,9 @@ export default function createTextMaskInputElement({
 }
 
 function safeSetSelection(element, selectionPosition) {
-  if (document.activeElement === element) {
+  if (document.activeElement === element &&
+      // setSelectionRange does not work for input fields like `email`.
+      /text|password|search|tel|url/.test(element.type)) {
     setTimeout(() => {
       element.setSelectionRange(selectionPosition, selectionPosition, strNone)
     }, 0);
