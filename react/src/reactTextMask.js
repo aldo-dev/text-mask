@@ -18,8 +18,12 @@ export default class MaskedInput extends React.Component {
     this.initTextMask()
   }
 
-  componentDidUpdate() {
-    this.initTextMask()
+  componentDidUpdate(prevProps) {
+    const {props, props: {value}} = this
+    if (prevProps.mask !== props.mask) {
+      this.textMaskInputElement = createTextMaskInputElement({inputElement: this.inputElement, ...props})
+    }
+    this.textMaskInputElement.update(value)
   }
 
   render() {
