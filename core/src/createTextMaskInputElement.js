@@ -39,7 +39,7 @@ export default function createTextMaskInputElement({
       // Custom code to quickly allow for piping even when a mask isn't provided
       // This is a cheap hack to get what we need working
       if (providedMask === false && pipe) {
-        const pipedResult = pipe(inputElement.value)
+        const pipedResult = pipe(rawValue);
         if (inputElement.value !== pipedResult) {
           const carretPos = inputElement.selectionStart
           inputElement.value = pipedResult // set the input value
