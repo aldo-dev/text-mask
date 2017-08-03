@@ -25,7 +25,7 @@ export default function createTextMaskInputElement({
   }
 
   // Anything that we will need to keep between `update` calls, we will store in this `state` object.
-  const state = {previousConformedValue: emptyString}
+  const state = {previousConformedValue: inputElement.value}
 
   // The `placeholder` is an essential piece of how Text Mask works. For a mask like `(111)`, the placeholder would be
   // `(___)` if the `placeholderChar` is set to `_`.
@@ -60,6 +60,7 @@ export default function createTextMaskInputElement({
 
         return
       }
+
       // In framework components that support reactivity, it's possible to turn off masking by passing
       // `false` for `mask` after initialization. See https://github.com/text-mask/text-mask/pull/359
       if (providedMask === false) { return }
