@@ -27,7 +27,7 @@ export default function createTextMaskInputElement({
   }
 
   // Anything that we will need to keep between `update` calls, we will store in this `state` object.
-  const state = {previousConformedValue: undefined, previousPlaceholder: undefined}
+  const state = {previousConformedValue: inputElement.value}
 
   return {
     state,
@@ -48,6 +48,7 @@ export default function createTextMaskInputElement({
 
         return
       }
+
       // In framework components that support reactivity, it's possible to turn off masking by passing
       // `false` for `mask` after initialization. See https://github.com/text-mask/text-mask/pull/359
       if (providedMask === false) { return }
