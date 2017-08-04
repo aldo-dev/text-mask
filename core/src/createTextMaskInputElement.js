@@ -27,7 +27,7 @@ export default function createTextMaskInputElement({
   }
 
   // Anything that we will need to keep between `update` calls, we will store in this `state` object.
-  const state = {previousConformedValue: inputElement.value}
+  const state = {previousConformedValue: undefined}
 
   return {
     state,
