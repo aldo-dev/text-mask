@@ -1,7 +1,7 @@
 {
-  "name": "mhazy-react-text-mask",
-  "version": "2.2.9",
-  "description": "React input component that accepts mask pattern (BUG FIX EDITION)",
+  "name": "aldo-react-text-mask",
+  "version": "0.0.1",
+  "description": "React input component that accepts mask pattern",
   "main": "dist/reactTextMask.js",
   "author": "M.K. Safi <msafi@msafi.com>",
   "license": "Unlicense",
