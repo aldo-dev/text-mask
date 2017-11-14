@@ -7,25 +7,8 @@ const strFunction = 'function'
 const emptyString = ''
 const strNone = 'none'
 const strObject = 'object'
-const isAndroid = typeof navigator !== 'undefined' && /Android/i.test(navigator.userAgent)
-const defer = typeof requestAnimationFrame !== 'undefined' ? requestAnimationFrame : setTimeout
 
-export default function createTextMaskInputElement({
-  inputElement,
-  mask: providedMask,
-  guide,
-  pipe,
-  placeholderChar = defaultPlaceholderChar,
-  keepCharPositions = false
-}) {
-  // Text Mask accepts masks that are a combination of a `mask` and a `pipe` that work together. If such a `mask` is
-  // passed, we destructure it below, so the rest of the code can work normally as if a separate `mask` and a `pipe`
-  // were passed.
-  if (typeof providedMask === strObject && !!providedMask && providedMask.pipe !== undefined && providedMask.mask !== undefined) {
-    pipe = providedMask.pipe
-    providedMask = providedMask.mask
-  }
-
+export default function createTextMaskInputElement(config) {
   // Anything that we will need to keep between `update` calls, we will store in this `state` object.
   const state = {previousConformedValue: undefined}
 
@@ -35,11 +18,27 @@ export default function createTextMaskInputElement({
     // `update` is called by framework components whenever they want to update the `value` of the input element.
     // The caller can send a `rawValue` to be conformed and set on the input element. However, the default use-case
     // is for this to be read from the `inputElement` directly.
-    update(rawValue = inputElement.value) {
+    update(rawValue = config.inputElement.value, {
+      inputElement,
+      mask: providedMask,
+      guide,
+      pipe,
+      placeholderChar = defaultPlaceholderChar,
+      keepCharPositions = false,
+      showMask = false
+    } = config) {
+      // Text Mask accepts masks that are a combination of a `mask` and a `pipe` that work together. If such a `mask` is
+      // passed, we destructure it below, so the rest of the code can work normally as if a separate `mask` and a `pipe`
+      // were passed.
+      if (typeof providedMask === strObject && !!providedMask && providedMask.pipe !== undefined && providedMask.mask !== undefined) {
+        pipe = providedMask.pipe
+        providedMask = providedMask.mask
+      }
+
       // Custom code to quickly allow for piping even when a mask isn't provided
       // This is a cheap hack to get what we need working
       if (providedMask === false && pipe) {
-        const pipedResult = pipe(rawValue);
+        const pipedResult = pipe(rawValue)
         if (inputElement.value !== pipedResult) {
           const carretPos = inputElement.selectionStart
           inputElement.value = pipedResult // set the input value
@@ -202,7 +201,7 @@ function safeSetSelection(element, selectionPosition) {
       /text|password|search|tel|url/.test(element.type)) {
     setTimeout(() => {
       element.setSelectionRange(selectionPosition, selectionPosition, strNone)
-    }, 0);
+    }, 0)
   }
 }
 
